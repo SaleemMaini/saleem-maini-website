@@ -2,7 +2,10 @@
 // components only render what is defined below.
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://saleem-maini.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://saleemmaini.github.io/saleem-maini-website";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const cvFile = "saleem-maini-cv.pdf";
 
 export const profile = {
   name: "Saleem Maini",
@@ -16,7 +19,8 @@ export const profile = {
   github: "https://github.com/SaleemMaini",
   // Drop the PDF at public/saleem-maini-cv.pdf — the "Download CV"
   // buttons appear automatically once the file exists.
-  cvPath: "/saleem-maini-cv.pdf",
+  cvFile,
+  cvPath: `${basePath}/${cvFile}`,
 };
 
 export const seo = {

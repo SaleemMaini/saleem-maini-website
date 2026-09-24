@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(new URL(siteUrl).origin),
   title: seo.title,
   description: seo.description,
   authors: [{ name: profile.name, url: siteUrl }],
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     "SaaS",
     profile.name,
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: siteUrl },
   openGraph: {
     type: "profile",
-    url: "/",
+    url: siteUrl,
     title: seo.title,
     description: seo.description,
     siteName: profile.name,

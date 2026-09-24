@@ -13,7 +13,7 @@ case studies, skills, about, education and contact. Components only render that 
 - **CV download:** add your PDF as `public/saleem-maini-cv.pdf`. The "Download CV" buttons appear
   automatically on the next build.
 - **Store links:** add `links: [{ label: "App Store", href: "..." }]` to a case study.
-- **Domain:** set `NEXT_PUBLIC_SITE_URL` (used for SEO, sitemap and Open Graph) when deploying.
+- **Domain:** `NEXT_PUBLIC_SITE_URL` sets the address used for SEO, sitemap and Open Graph.
 
 ## Scripts
 
@@ -26,4 +26,11 @@ npm run build   # static export to out/
 
 ## Deploy
 
-Import the repo in Vercel (zero config), or upload `out/` to any static host.
+Live at **https://saleemmaini.github.io/saleem-maini-website/**.
+
+Every push to `main` builds and deploys the site via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+One-time setup: repo **Settings → Pages → Source: GitHub Actions**.
+
+For a root domain (Vercel or a custom domain), build without `NEXT_PUBLIC_BASE_PATH`
+and set `NEXT_PUBLIC_SITE_URL` to the new address.
